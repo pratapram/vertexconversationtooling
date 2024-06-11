@@ -8,7 +8,9 @@ This repository shows how to create custom tools using cloudrun.
 ### 2 Create a cloudrun service
 Cloudrun is a serverless fully managed platform to host your web application. In this case we will create a REST endpoint. To do this
 2.1 Clone this repository in your workspace
+
 2.2 cd cloudrun
+
 2.3 modify the main.py to your projectid
 2.4 This cloudrun service runs a query on bigquery and returns the result. So modify the bigquery query to suit your needs. (The dataset is not provided here)
 2.5 run "gcloud run deploy" . This will take package the code into a container and deploy it. You need to have cloudrun permissions to deploy this code as a service. Once successful, you can hit the url provided by cloudrun to test if it works
