@@ -5,6 +5,9 @@ This repository shows how to create custom tools using cloudrun.
 
 ## Steps
 ### 1 Create an Agent using Agent Builder in GCP Vertex AI 
+
+![Creating an agent](https://github.com/pratapram/vertexconversationtooling/blob/main/agent.jpeg)
+
 ### 2 Create a cloudrun service
 Cloudrun is a serverless fully managed platform to host your web application. In this case we will create a REST endpoint. To do this
 
