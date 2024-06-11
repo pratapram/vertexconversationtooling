@@ -1,0 +1,66 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Summarizer API",
+        "version": "1.0.0",
+        "description": "This is the OpenAPI specification of a summarization."
+    },
+    "servers": [
+        {
+            "url": "https://summarizer-zrtaztkupa-uw.a.run.app"
+        }
+    ],
+    "paths": {
+        "/summarize": {
+            "post": {
+                "summary": "Summarize a document",
+                "operationId" : "summarize",
+                "requestBody": {
+                    "description": "summarize a document",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "required": ["document_id"],
+                                "properties": {
+                                    "document_id": {
+                                        "type": "string",
+                                        "description": "The ID of the document to summarize"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                 "200": {
+                    "description": "Successful summarization",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                      "type": "object",
+                                    "properties": {
+                                        "summary": {
+                                        "type": "string",
+                                            "description": "The summarized content of the document"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Missing or invalid document_id"
+                    },
+                    "404": {
+                        "description": "Not Found - Document not found or could not be summarized"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        }
+    }
+}
